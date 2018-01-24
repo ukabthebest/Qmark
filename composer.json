@@ -1,0 +1,24 @@
+{
+    "name": "ukab/qmark",
+    "description": "A package to quickly create quiz applications",
+    "keywords": ["quiz", "questions", "survey","exam"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Usama Kamran",
+            "email": "usamakamran94@gmail.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=5.4"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "Ukab\\Qmark\\": "src/"
+        }
+    }
+}
