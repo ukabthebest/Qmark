@@ -13,5 +13,9 @@ namespace Ukab\Qmark;
 
 class AnswerChoice
 {
+    public function __construct($answer,$score)
+    {
+
+    }
 
 }

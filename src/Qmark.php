@@ -1,4 +1,6 @@
-<?php namespace Ukab\Qmark;
+<?php
+
+namespace Ukab\Qmark;
 
 /**
  *  Qmark class

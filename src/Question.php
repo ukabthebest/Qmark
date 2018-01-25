@@ -43,8 +43,8 @@ class Question
     public function ofType($type = "MCQ|Slider|Text|Image")
     {
         $this->type = $type;
-        $reflectionClass = new \ReflectionClass($type);
-        return $reflectionClass->newInstanceArgs();
+        $reflectionClass = new \ReflectionClass('Ukab\Qmark\\'.$type);
+        return $reflectionClass->newInstance();
     }
 
 

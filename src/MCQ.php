@@ -11,7 +11,7 @@ namespace Ukab\Qmark;
  */
 
 
-class MultipleChoiceQuestion
+class MCQ
 {
 
     /**
@@ -20,7 +20,7 @@ class MultipleChoiceQuestion
      * @var float score defines the score of the chosen answer
      */
 
-    private $answerChoices;
+    private $answerChoices = array();
     private $correctAnswer;
     private $score;
 
@@ -39,7 +39,13 @@ class MultipleChoiceQuestion
         return $this->score;
     }
 
-
+    public function setChoices($choices = ["answer" => "score"])
+    {
+        foreach ($choices as $answer => $score){
+            $answerChoice = new AnswerChoice($answer,$score);
+            array_push($this->answerChoices,$answerChoice);
+        }
+    }
 
 
 }
