@@ -19,6 +19,8 @@ Example Usage
   $mysurvey->addQuestion("How old are you?")->ofType("MCQ")->setChoices(["I am above 20" => 3, "I am above 30" => 5])->setCorrectAnswer("I am immortal");
 </code>
 
+Here "I am above 20" is a sample choice and 3 is the score allocated to that choice.
+
 Contribution
 --------
 
