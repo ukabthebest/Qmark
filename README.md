@@ -11,8 +11,10 @@ Features
 
 Example Usage
 -------------
+<code>
 $mysurvey = new Qmark();
 $mysurvey->addQuestion("How old are you?")->ofType("MCQ")->setChoices(["I am above 20" => 3, "I am above 30" => 5])->setCorrectAnswer("I am immortal");
+  </code>
 
 Contribution
 --------
