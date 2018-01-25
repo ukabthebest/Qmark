@@ -25,7 +25,7 @@ class Question
     private $type;
 
 
-    public function __construct($question)
+    public function __construct($question,$type="MCQ|Slider|Text|Image")
     {
         $this->question = $question;
     }
@@ -37,15 +37,14 @@ class Question
      *
      * @param string $type
      *
-     * @return MultipleChoiceQuestion Instance
+     * @return mixed Instance
      */
-    public function setType($type = "MCQ|Slider|Text|Image")
+
+    public function ofType($type = "MCQ|Slider|Text|Image")
     {
         $this->type = $type;
-        if($type === "MCQ")
-        {
-            return new MultipleChoiceQuestion();
-        }
+        $reflectionClass = new \ReflectionClass($type);
+        return $reflectionClass->newInstanceArgs();
     }
 
 
