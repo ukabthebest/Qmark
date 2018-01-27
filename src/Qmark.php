@@ -24,6 +24,10 @@ class Qmark
     private $criteria;
     private $total_score = 0;
 
+    public function __construct()
+    {
+    }
+
     /**
      * @return string title
      */

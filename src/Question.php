@@ -37,7 +37,10 @@ class Question
      *
      * @param string $type
      *
-     * @return mixed Instance
+     * @return MCQ|Slider|Text|Image
+     *
+     * @throws \Exception
+     *
      */
 
     public function ofType($type = "MCQ|Slider|Text|Image")

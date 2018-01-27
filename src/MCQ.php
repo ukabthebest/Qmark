@@ -21,7 +21,7 @@ class MCQ
      */
 
     private $answerChoices = array();
-    private $correctAnswer;
+    private $correctAnswer = false;
     private $score;
 
 
@@ -39,13 +39,38 @@ class MCQ
         return $this->score;
     }
 
-    public function setChoices($choices = ["answer" => "score"])
+    /**
+     * @param string $choice
+     *
+     * @param integer $score
+     *
+     * @param boolean $correct
+     *
+     * @return MCQ
+     */
+
+    public function addChoice($choice,$score = 0,$correct=false)
     {
-        foreach ($choices as $answer => $score){
-            $answerChoice = new AnswerChoice($answer,$score);
-            array_push($this->answerChoices,$answerChoice);
+        $answerChoice = new AnswerChoice($choice);
+        $numArgs = func_num_args();
+        if ($numArgs > 2){
+            $answerChoice->setScore($score);
+            $answerChoice->setCorrect($correct);
         }
+        else{
+            $args = func_get_args();
+            if (is_bool($args[1])){
+                $answerChoice->setCorrect($args[1]);
+            }
+            elseif (is_numeric($args[1])){
+                $answerChoice->setScore($args[1]);
+            }
+        }
+        array_push($this->answerChoices,$answerChoice);
+        return $this;
     }
+
+
 
 
 }

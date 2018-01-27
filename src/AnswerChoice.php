@@ -13,9 +13,40 @@ namespace Ukab\Qmark;
 
 class AnswerChoice
 {
-    public function __construct($answer,$score)
-    {
 
+    private $answer;
+    private $score;
+    private $correct;
+
+    public function __construct($answer,$score = 0,$correct = false)
+    {
+        $this->answer = $answer;
+        $this->score = $score;
+        $this->correct = $correct;
+    }
+
+    /**
+     * @param int $score
+     */
+    public function setScore($score)
+    {
+        $this->score = $score;
+    }
+
+    /**
+     * @param bool $correct
+     */
+    public function setCorrect($correct)
+    {
+        $this->correct = $correct;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCorrect()
+    {
+        return $this->correct;
     }
 
 }
